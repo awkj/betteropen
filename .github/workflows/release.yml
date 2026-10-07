@@ -43,6 +43,7 @@ jobs:
             .build-release/*.dmg
             .build-release/*.sha256
           if-no-files-found: error
+          include-hidden-files: true
       - name: 创建 GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
