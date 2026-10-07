@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+    <channel>
+        <title>BetterOpen</title>
+        <description>BetterOpen 版本更新</description>
+        <language>zh-CN</language>
+        <!-- 正式发布时添加版本、下载地址与 EdDSA 签名；不要指向原项目发布包。 -->
+    </channel>
+</rss>

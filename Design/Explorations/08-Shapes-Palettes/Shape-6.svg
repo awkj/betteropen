@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="BetterOpen 圆角方形 · 暖橙 · 活力">
+<defs><radialGradient id="body" cx="380" cy="340" r="610" gradientUnits="userSpaceOnUse"><stop stop-color="#FF9F5E"/><stop offset="0.48" stop-color="#F77934"/><stop offset="1" stop-color="#E66428"/></radialGradient></defs>
+<path d="M512 64C920 64 960 104 960 512S920 960 512 960S64 920 64 512S104 64 512 64Z" fill="#FFFFFF"/>
+<g transform="translate(112.64 112.64) scale(0.78)"><path d="M960.000 512.000L960.000 725.000C960.000 854.787 854.787 960.000 725.000 960.000L299.000 960.000C169.213 960.000 64.000 854.787 64.000 725.000L64.000 299.000C64.000 169.213 169.213 64.000 299.000 64.000L725.000 64.000C854.787 64.000 960.000 169.213 960.000 299.000Z" fill="url(#body)"/><g fill="#16191B"><rect x="367.0" y="336.0" width="102.0" height="312.0" rx="51"/><rect x="555.0" y="336.0" width="102.0" height="312.0" rx="51"/></g></g></svg>

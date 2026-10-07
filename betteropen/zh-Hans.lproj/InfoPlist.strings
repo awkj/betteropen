@@ -1,0 +1,2 @@
+/* 终端自动化权限说明。 */
+"NSAppleEventsUsageDescription" = "BetterOpen 需要在所选终端中创建窗口或标签页。";

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="BetterOpen 1">
+<rect x="64" y="64" width="896" height="896" rx="200" fill="#FFFFFF"/>
+<path d="M278 268H478V468H278Z" fill="#171714" fill-rule="evenodd"/>
+<path d="M278 528H478V728H278Z" fill="#171714" fill-rule="evenodd"/>
+<path d="M538 528H738V728H538Z" fill="#171714" fill-rule="evenodd"/>
+<path d="M568 436L748 256M592 256H748V412" fill="none" stroke="#F9CA24" stroke-width="72.0" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

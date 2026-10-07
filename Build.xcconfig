@@ -1,0 +1,15 @@
+// 使用当前 Xcode 的 SDK；最低运行版本与编译 SDK 分开设置。
+SDKROOT = macosx
+MACOSX_DEPLOYMENT_TARGET = 14.0
+
+// 仅构建 Apple Silicon；系统兼容范围仍从 macOS 14 开始。
+ARCHS = arm64
+EXCLUDED_ARCHS = x86_64
+
+// 界面代码默认隔离到主执行器；纯数据类型显式声明为 nonisolated。
+SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor
+SWIFT_APPROACHABLE_CONCURRENCY = YES
+
+// 配置自己的更新源与验证公钥后才启用自动更新。
+BETTEROPEN_UPDATE_FEED_URL =
+BETTEROPEN_UPDATE_PUBLIC_KEY =

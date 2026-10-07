@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="BetterOpen 圆角三角形橙色候选">
+<defs><radialGradient id="orange" cx="380" cy="340" r="610" gradientUnits="userSpaceOnUse"><stop stop-color="#FF9F5E"/><stop offset="0.48" stop-color="#F77934"/><stop offset="1" stop-color="#E66428"/></radialGradient></defs>
+<path d="M512 64C920 64 960 104 960 512S920 960 512 960S64 920 64 512S104 64 512 64Z" fill="#FFFFFF"/>
+<g transform="translate(112.64 112.64) scale(0.78)">
+<path d="M512 64C552 64 584 87 611 132L937 777C1000 898 931 960 838 960H186C93 960 24 898 87 777L413 132C440 87 472 64 512 64Z" fill="url(#orange)"/>
+<g fill="#16191B"><rect x="367.0" y="587.5" width="102.0" height="185.0" rx="51"/><rect x="555.0" y="587.5" width="102.0" height="185.0" rx="51"/></g></g></svg>

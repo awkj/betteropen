@@ -1,0 +1,62 @@
+name: 发布版本
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: xcode-27
+    steps:
+      - name: 检出源码
+        uses: actions/checkout@v5
+      - name: 选择 Xcode 27
+        run: |
+          sudo xcode-select -s /Applications/Xcode_27.0.0.app/Contents/Developer
+          xcodebuild -version
+      - name: 校验标签
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          if [[ ! "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo '标签必须采用 v1.0.0 格式。' >&2
+            exit 1
+          fi
+          echo "BETTEROPEN_VERSION=${RELEASE_TAG#v}" >> "$GITHUB_ENV"
+      - name: 运行核心测试
+        run: swift test --arch arm64
+      - name: 构建无开发者签名的 DMG
+        run: ./build.sh package
+      - name: 保存构建产物
+        uses: actions/upload-artifact@v4
+        with:
+          name: BetterOpen-${{ github.ref_name }}-arm64
+          path: |
+            .build-release/*.dmg
+            .build-release/*.sha256
+          if-no-files-found: error
+      - name: 创建 GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          cat > "$RUNNER_TEMP/release-notes.md" <<'NOTES'
+          BetterOpen，支持 Apple Silicon（arm64），最低 macOS 14。
+
+          下载 DMG 后，将 BetterOpen 拖入 Applications 文件夹。
+
+          此版本没有 Developer ID 签名或 Apple 公证，仅包含运行所需的临时签名。首次打开可能被系统拦截；确认下载来源后，可在「系统设置 > 隐私与安全性」中允许打开。
+
+          同时提供 SHA-256 校验文件。应用内自动更新尚未启用。
+          NOTES
+          gh release create "$RELEASE_TAG" .build-release/*.dmg .build-release/*.sha256 \
+            --repo "$GITHUB_REPOSITORY" --verify-tag \
+            --title "BetterOpen ${RELEASE_TAG#v}" --notes-file "$RUNNER_TEMP/release-notes.md"

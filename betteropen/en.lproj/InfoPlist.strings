@@ -1,0 +1,2 @@
+/* 终端自动化权限说明。 */
+"NSAppleEventsUsageDescription" = "BetterOpen needs to create terminal windows or tabs in your selected application.";
