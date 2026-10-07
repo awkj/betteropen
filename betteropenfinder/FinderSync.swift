@@ -47,7 +47,7 @@ nonisolated final class FinderSync: FIFinderSync {
             item.target = self
             item.tag = menuRequests.insert(request)
             let icon = app.map { NSWorkspace.shared.icon(forFile: $0.applicationURL.path) }
-                ?? NSImage(systemSymbolName: "doc.on.clipboard", accessibilityDescription: nil)
+                ?? NSImage(systemSymbolName: "doc.on.doc", accessibilityDescription: nil)
             icon?.size = NSSize(width: 16, height: 16)
             item.image = icon
             menu.addItem(item)
